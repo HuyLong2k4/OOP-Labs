@@ -1,37 +1,21 @@
 public class BankAccount {
-    private String owner;
-    private boolean balance;
+    protected String ownerName;
+    protected String accountNumber;
+    protected long initialBalance;
+    protected static final long MINIMUMBALANCE = 50000;
 
-    public BankAccount(String owner, double balance) {
-        this.owner = owner;
-        this.balance = balance;
+    public BankAccount(String ownerName, String accountNumber, long initialBalance) {
+        this.ownerName = ownerName;
+        this.accountNumber = accountNumber;
+        this.initialBalance = initialBalance;
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public boolean getBalance() {
-        return balance;
-    }
-
-    public void setBalance(boolean balance) {
-        this.balance = balance;
-    }
-
-    public boolean debit(double money) {
-        if( money > balance )
-            return false;
-        else {
-            balance = balance - money;
+    public void deposit(long amount) {
+        if (amount > 0) {
+            initialBalance += amount;
+            System.out.println(amount + " deposited successfully.");
+        } else {
+            System.out.println("Deposit amount must be positive.");
         }
-    }
-
-    public void credit( double money) {
-        return balance = balance + money;
     }
 }

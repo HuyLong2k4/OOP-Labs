@@ -1,14 +1,14 @@
-public class SavingAccount extends BankAccount{
-    public SavingAccount(String owner, double balance) {
-        super(owner, balance);
+public class SavingAccount extends BankAccount {
+    private float annualInterest;
+
+    public SavingAccount(String ownerName, String accountNumber, long initialBalance, float annualInterest) {
+        super(ownerName, accountNumber, initialBalance);
+        this.annualInterest = annualInterest;
     }
 
-    @Override
-    public void withdraw(double money) {
-        if(getBalance() - money < 100) {
-            System.out.println("Số dư tối thiểu là 100");
-        } else {
-            super.debit(money);
-        }
+    public long monthlyInterest() {
+        long interest = (long) ((initialBalance * (annualInterest / 100)) / 12);
+        System.out.println("Monthly interest: " + interest);
+        return interest;
     }
 }
