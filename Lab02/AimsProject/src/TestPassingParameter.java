@@ -3,8 +3,8 @@ public class TestPassingParameter {
             //TODO Auto-generated method stub
             DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
             DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
-            swap(jungleDVD, cinderellaDVD);
 
+            swap(jungleDVD, cinderellaDVD);
             System.out.println("jungle dvd title:" + jungleDVD.getTitle());
             System.out.println("cinderella dvd title: " + cinderellaDVD.getTitle());
 
