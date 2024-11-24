@@ -3,20 +3,18 @@ public class TestPassingParameter {
             //TODO Auto-generated method stub
             DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
             DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+            swap(jungleDVD, cinderellaDVD);
 
-            DigitalVideoDisc[] dvdList = {jungleDVD, cinderellaDVD};
-            swap(dvdList);
-
-            System.out.println("jungle dvd title:" + dvdList[0].getTitle());
-            System.out.println("cinderella dvd title: " + dvdList[1].getTitle());
+            System.out.println("jungle dvd title:" + jungleDVD.getTitle());
+            System.out.println("cinderella dvd title: " + cinderellaDVD.getTitle());
 
             changeTitle(jungleDVD, cinderellaDVD.getTitle());
             System.out.println("jungle dvd title:" + jungleDVD.getTitle());
         }
-        public static void swap(DigitalVideoDisc[] dvdList) {
-            Object tmp = dvdList[0];
-            dvdList[0] = dvdList[1];
-            dvdList[1] = tmp;
+        public static void swap(Object o1, Object o2) {
+            Object tmp = o1;
+            o1 = o2;
+            o2 = tmp;
         }
         public static void changeTitle(DigitalVideoDisc dvd, String title) {
             String oldTitle = dvd.getTitle();
