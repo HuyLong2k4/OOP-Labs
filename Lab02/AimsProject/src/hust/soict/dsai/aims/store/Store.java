@@ -1,3 +1,7 @@
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 import java.util.ArrayList;
 
 public class Store {
@@ -21,7 +25,7 @@ public class Store {
     }
 
     public void print() {
-        System.out.println("********** Store Inventory **********");
+        System.out.println("********** hust.soict.dsai.aims.store.Store Inventory **********");
         if ( itemsInStore.isEmpty()) {
             System.out.println("The store is empty.");
         } else {
