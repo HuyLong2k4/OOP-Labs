@@ -6,6 +6,14 @@ public class Media {
     private String category;
     private float cost;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // Kiểm tra xem có phải là cùng một đối tượng không
+        if (o == null || getClass() != o.getClass()) return false; // Kiểm tra kiểu lớp
+        Media media = (Media) o; // Ép kiểu đối tượng tham số
+        return title != null ? title.equals(media.title) : media.title == null; // So sánh thuộc tính title
+    }
+
     public Media(int id, String title, float cost, String category) {
         this.id = id;
         this.title = title;
