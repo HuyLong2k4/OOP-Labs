@@ -21,6 +21,33 @@ public class Store {
             System.out.println("Khong co media");
         }
     }
+    public void searchByTitle(String title) {
+        boolean found = false;
+        for (int i = 0; i <= itemsInStore.size(); i++) {
+            if (itemsInStore.get(i).getTitle() == title) {
+                System.out.println("DVD found: " + itemsInStore.get(i).toString());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("No match found for title: " + title);
+        }
+    }
+
+    public void searchById(int id) {
+        boolean found = false;
+        for(int i =0; i < itemsInStore.size(); i++) {
+            if(itemsInStore.get(i).getId() == id) {
+                System.out.println("DVD found: " + itemsInStore.get(i).toString());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("No match found for ID: " + id);
+        }
+    }
 
     public void print() {
         System.out.println("********** hust.soict.dsai.aims.store.Store Inventory **********");

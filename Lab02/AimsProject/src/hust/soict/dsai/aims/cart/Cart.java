@@ -23,33 +23,6 @@ public class Cart {
             System.out.println("Khong ton tai Media");
         }
     }
-    public void searchById(int id) {
-        boolean found = false;
-        for(int i =0; i < itemsOrdered.size(); i++) {
-            if(itemsOrdered.get(i).getId() == id) {
-                System.out.println("DVD found: " + itemsOrdered.get(i).toString());
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("No match found for ID: " + id);
-        }
-    }
-
-    public void searchByTitle(String title) {
-        boolean found = false;
-        for (int i = 0; i <= itemsOrdered.size(); i++) {
-            if (itemsOrdered.get(i).getTitle() == title) {
-                System.out.println("DVD found: " + itemsOrdered.get(i).toString());
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("No match found for title: " + title);
-        }
-    }
 
     public float totalCost() {
         float total = 0;
