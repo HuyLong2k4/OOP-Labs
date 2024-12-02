@@ -1,24 +1,103 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.store.Store;
+
+import java.util.Scanner;
 
 public class Aims {
     public static void main(String[] args) {
-        Cart anOder = new Cart();
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", " Animation", "Roger Allers", 87, 19.95f);
-        // Add DVD to hust.soict.dsai.aims.cart.Cart
-        anOder.addMedia(dvd1);
+        Scanner scanner = new Scanner(System.in);
 
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "Geogre Lucas", 87, 24.95f);
-        anOder.addMedia(dvd2);
+        while (true) {
+            showMenu();
+            int choice = scanner.nextInt();
 
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
-        anOder.addMedia(dvd3);
+            switch (choice) {
+                case 1:
+                    viewStore();
+                    break;
+                case 2:
+                    updateStore();
+                    break;
+                case 3:
+                    seeCurrentCart();
+                    break;
+                case 0:
+                    System.out.println("Exiting program...");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please select again.");
+            }
+        }
+    }
 
-        anOder.removeMedia(dvd3);
+    public static void showMenu() {
+        System.out.println("AIMS:");
+        System.out.println("--------------------------------");
+        System.out.println("1. View store");
+        System.out.println("2. Update store");
+        System.out.println("3. See current cart");
+        System.out.println("0. Exit");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3");
+    }
 
-        System.out.println("Total cost is: ");
-        System.out.println(anOder.totalCost());
+    public static void viewStore() {
+        storeMenu();
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                seeMedia();
+                break;
+            case 2:
+                updateStore();
+                break;
+            case 3:
+                seeCurrentCart();
+                break;
+            case 0:
+                System.out.println("Exiting program...");
+                return;
+            default:
+                System.out.println("Invalid choice. Please select again.");
+        }
+    }
+
+    public static void storeMenu() {
+        System.out.println("Options:");
+        System.out.println("--------------------------------");
+        System.out.println("1. See a media's details");
+        System.out.println("2. Add a media to cart");
+        System.out.println("3. Play a media");
+        System.out.println("4. See current cart");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3-4");
+    }
+
+    public static void seeMedia() {}
+    public static void updateStore() {
+        // Implement store update functionalities
+    }
+
+    public static void seeCurrentCart() {
+        cartMenu();
+
+    }
+
+    public static void cartMenu() {
+        System.out.println("Options:");
+        System.out.println("--------------------------------");
+        System.out.println("1. Filter medias in cart");
+        System.out.println("2. Sort medias in cart");
+        System.out.println("3. Remove media from cart");
+        System.out.println("4. Play a media");
+        System.out.println("5. Place order");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
 }

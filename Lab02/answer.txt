@@ -11,4 +11,34 @@ Câu 1:If you create a constructor method to build a DVD by title then create a 
     public void setCategory(String category) {
         this.category = category;
     }
+Câu 2: Is JAVA a Pass by Value or a Pass by Reference programming language?
 
+Java là Pass by Value (truyền tham trị). Khi bạn truyền một biến vào một phương thức, Java luôn truyền giá trị của biến đó.
+
+Câu 3:Alternatively, to compare items in the cart, instead of using Comparator, we can use the Comparable interface and override the compareTo()method. You can refer to the Java docs to see the information of this interface.
+      Suppose we are taking this Comparable interface approach.
+      -	What class should implement the Comparable interface?
+      -	In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+      -	Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+      -	Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+Answer :
+      - Lớp media nên triển khai giao diện Comparable
+      - Để triển khai phương thức compareTo() trong lớp Media, ta cần tạo logic so sánh giữa hai đối tượng Media dựa trên tiêu chí sắp xếp mong muốn
+      - Không
+      - Để cho phép DVD có quy tắc sắp xếp riêng biệt, ta có thể ghi đè lại phương thức compareTo() trong lớp DigitalVideoDisc thay vì lớp Media. Điều này cho phép ta định nghĩa một quy tắc sắp xếp riêng cho các đối tượng DVD, trong khi vẫn giữ quy tắc sắp xếp chung cho các loại media khác.
+Câu 4: Polymorphism with toString() method
+       This exercise gives an illustration for polymorphism at behavior level.
+       Recall that for each type of media, we have implemented a toString() method that prints out the information of the object. When calling this method, depending on the type of object, corresponding toString() will be performed.
+       - Create an ArrayList of Media, then add some media (CD, DVD or Book) into the list.
+       - Iterate through the list and print out the information of the media by using toString() method. Observe what happens and explain in detail.
+Sample code:
+        List<Media> mediae = new ArrayList<>();
+        mediae.add(cd);
+        mediae.add(dvd);
+        mediae.add(book);
+        for (Media m : mediae) {
+            System.out.println(m.toString());
+        }
+
+==> kết quả : Khi  chạy chương trình, đối với mỗi đối tượng trong danh sách, phương thức toString() của lớp sẽ được gọi và in ra theo như ta đã cấu hình phương thức toString() trước đó.
