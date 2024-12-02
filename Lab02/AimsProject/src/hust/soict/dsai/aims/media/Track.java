@@ -2,11 +2,20 @@ package hust.soict.dsai.aims.media;
 
 public class Track implements Playable {
     private String title;
-    private int lenght;
+    private int length;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // Kiểm tra xem có phải là cùng một đối tượng không
+        if (o == null || getClass() != o.getClass()) return false; // Kiểm tra kiểu lớp
+        Track track = (Track) o; // Ép kiểu đối tượng tham số
+        return title != null ? title.equals(track.title) : track.title == null
+                && length == track.length; // So sánh title và length
+    }
 
     public Track(String title, int length) {
         this.title = title;
-        this.lenght = length;
+        this.length = length;
     }
 
     public String getTitle() {
@@ -14,7 +23,7 @@ public class Track implements Playable {
     }
 
     public int getLenght() {
-        return lenght;
+        return length;
     }
 
     public void play() {
