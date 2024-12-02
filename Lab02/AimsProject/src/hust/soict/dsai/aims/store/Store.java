@@ -1,26 +1,24 @@
 package hust.soict.dsai.aims.store;
-
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 import java.util.ArrayList;
 
 public class Store {
-    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<>();
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    public void addDVD(DigitalVideoDisc dvd) {
-        if(dvd != null) {
-            itemsInStore.add(dvd);
+    public void addMedia(Media media) {
+        if(itemsInStore.contains(media)) {
+            System.out.println("Da ton tai");
         } else {
-            System.out.println("DVD khong hop le");
+            itemsInStore.add(media);
         }
     }
 
-    public void removeDVD(DigitalVideoDisc dvd) {
-
-        if(itemsInStore.remove(dvd)) {
-            System.out.println("Đã xoá thành công");
+    public void removeMedia(Media media) {
+        if(itemsInStore.contains(media)) {
+            itemsInStore.remove(media);
         } else {
-            System.out.println("Khong tim thay DVD");
+            System.out.println("Khong co media");
         }
     }
 

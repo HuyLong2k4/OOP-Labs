@@ -1,4 +1,4 @@
-public class Main {
+public class MainApp {
     public static void main(String[] args) {
         // Tạo tài khoản NormalAccount
         NormalAccount normalAcc = new NormalAccount("John Doe", "123456789", 100000);
