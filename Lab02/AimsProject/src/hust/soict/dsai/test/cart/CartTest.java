@@ -2,6 +2,9 @@ package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.screen.CartScreen;
+
+import javax.swing.*;
 
 public class CartTest {
     public static void main(String[] args) {
@@ -19,7 +22,8 @@ public class CartTest {
         cart.addMedia(dvd3);
 
         // Test the print method
-        cart.print();
+        SwingUtilities.invokeLater(() -> new CartScreen(cart));
         // To-do: Test the search methods here
+
     }
 }
