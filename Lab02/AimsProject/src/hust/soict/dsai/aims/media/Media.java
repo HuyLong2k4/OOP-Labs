@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import hust.soict.dsai.aims.exception.PlayerException;
+
 import java.time.Duration;
 import java.util.Comparator;
 
@@ -58,7 +60,8 @@ public abstract class Media implements Comparable<Media> {
         return this.getTitle().toLowerCase().contains(title.toLowerCase());
     }
 
-    public void play() {
+    public void play() throws PlayerException {
+
         System.out.println("Playing media");
     }
 
