@@ -52,6 +52,14 @@ public class Store {
             System.out.println("No match found for ID: " + id);
         }
     }
+    public Media search(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equals(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
 
     public void print() {
         System.out.println("********** hust.soict.dsai.aims.store.Store Inventory **********");
